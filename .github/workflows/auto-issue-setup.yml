@@ -43,6 +43,11 @@ jobs:
           project-url: https://github.com/users/yurim830/projects/2
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
 
+      - name: 프로젝트 자동 추가 디버그
+        run: |
+          echo "Project URL: https://github.com/users/yurim830/projects/2"
+          echo "GitHub Token Length: ${#ADD_TO_PROJECT_PAT}"
+
       - name: 프로젝트 카드 상태를 To do로 설정
         run: |
           ISSUE_ID=$(gh api graphql -f query='
